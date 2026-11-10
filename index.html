@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Smart Stream TV, toutes vos chaînes en un seul endroit." />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Smart Stream TV — Télévision en direct</title>
+</head>
+
+<body class="flex flex-col min-h-screen bg-[#080b16] text-white">
+  <header class="mt-0 w-[100%] flex justify-around m-4 p-3 bg-violet-700">
+    <a href="#home"><strong>Smart Stream TV</strong></a>
+
+    <button type="submit" class=" border rounded-md p-1 bg-black text-white" id="openAside">Chercher</button>
+  </header>
+  <main>
+    <section
+      class="mx-auto w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-violet-700 p-4 md:p-6">
+      <div class="mb-4 flex items-center justify-between ">
+        <span class="text-xs text-red-300">● EN DIRECT</span>
+      </div>
+      <video class="aspect-video w-full rounded-lg bg-black" controls src="data/video/vb.mp4"></video>
+    </section>
+    <aside
+      class="fixed top-[76px] left-0  w-72 border-l border-white/10 bg-[#111117] p-5 text-white shadow-2xl -translate-x-full"
+      id="aside">
+      <div class="mb-6 flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Catégories</h2>
+        <button type="button" aria-label="Fermer"
+          class="rounded-md px-2 py-1 text-gray-400 hover:bg-white/10 hover:text-white" id="close">
+          ✕
+        </button>
+      </div>
+
+      <ul id="categoriList" class="space-y-2">
+        <li><button class="w-full rounded-lg  px-4 py-3 text-left text-sm font-medium hover:bg-white/10">ALL</button>
+        </li>
+
+      </ul>
+    </aside>
+  </main>
+  <footer class="border-t border-white/10 bg-white px-6 py-8 text-gray-400 mt-auto ">
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+
+      <p class="mt-2 text-sm">
+        Toutes vos chaînes préférées au même endroit.
+      </p>
+      <p class="text-xs">
+        © 2026 Smart Stream TV. Tous droits réservés.
+      </p>
+
+    </div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
