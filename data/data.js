@@ -1,3 +1,5 @@
+import { loader } from '../js/ui.js'
+
 export async function getData() {
    try{
     const respense = await fetch('https://6af42fce55a1de7dcf03ae98.mockapi.io/smartStream/channels')
@@ -20,6 +22,10 @@ export async function getData() {
    }catch(error){
    console.error(error)
 
+   } finally {
+      setTimeout(() => {
+         loader();
+      }, 200);
    }
     
 }

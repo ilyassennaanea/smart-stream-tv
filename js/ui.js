@@ -8,7 +8,7 @@ export function AsideDom() {
     const closed = document.getElementById('close')
     const listCategory = document.getElementById('categoriList')
     const listChannel = document.getElementById('channelList')
-    const asideBarChannel= document.getElementById('channel')
+    const asideBalrChanne= document.getElementById('player')
     const IMAGE= document.getElementById('previewImage')
     const searchInput= document.getElementById('searchInput')
     
@@ -40,6 +40,7 @@ export function AsideDom() {
     })
     renderChannels(filtredChannels)
  }
+ 
     const categoryBtns = document.querySelectorAll('.categoryBnt')
     categoryBtns.forEach(categoryBtn => {
         categoryBtn.addEventListener('click', e=>{
@@ -70,7 +71,27 @@ export function AsideDom() {
                 ch.id == id
             ).previewImage
             IMAGE.src  = image
+            const numberChannel = channels.find((ch)=>
+                ch.id == id
+            ).channelNumber
+            const name = channels.find((ch)=>
+                ch.id == id
+            ).name
+            const category = channels.find((ch)=>
+                ch.id == id
+            ).category
+
+            const infoChannel = document.createElement('div');
+          infoChannel.classList.add('relative','ml-[80%]','-top-[400px]')
+            infoChannel.innerHTML=`${name}<br>numero de canal: ${numberChannel}<br>type: ${category}`
+           asideBalrChanne.append(infoChannel)
         }
     })
+   
 }
+ 
+  export function loader(){
+        const spiner = document.getElementById('loader');
+        spiner.style.display = 'none';
+    }
 

@@ -21,7 +21,7 @@
   </header>
   <main>
     <section
-      class="mx-auto w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-violet-700 p-4 md:p-6">
+      class="mx-auto w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-violet-700 p-4 md:p-6" id="player">
       <div class="mb-4 flex items-center justify-between ">
         <span class="text-xs text-red-300">● EN DIRECT</span>
       </div>
@@ -51,9 +51,11 @@
           class="rounded-md px-2 py-1 text-gray-400 hover:bg-white/10 hover:text-white" id="close">
           ✕
         </button>
+
       </div>
       <ul id="channelList" class="overflow-y-auto max-h-[600px]">
-        
+                      <div id="loader" class=" m-auto mt-[50%] w-[100px] h-[100px] rounded-full border-[12px] border-[#f3f3f3] border-t-[12px] border-t-gray-600 animate-spin"></div>
+
       </ul>
     </aside>
   </main>
