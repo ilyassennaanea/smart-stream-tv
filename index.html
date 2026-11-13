@@ -16,7 +16,8 @@
   <header class="mt-0 w-[100%] flex justify-around m-4 p-3 bg-violet-700">
     <a href="#home"><strong>Smart Stream TV</strong></a>
 
-    <button type="submit" class=" border rounded-md p-1 bg-black text-white" id="openAside">Chercher</button>
+    <button type="submit" class=" border rounded-md p-1 bg-black text-white" id="openAside">Catégories</button>
+    <input type="text" id="searchInput" class="text-black">
   </header>
   <main>
     <section
@@ -24,7 +25,7 @@
       <div class="mb-4 flex items-center justify-between ">
         <span class="text-xs text-red-300">● EN DIRECT</span>
       </div>
-      <video class="aspect-video w-full rounded-lg bg-black" controls src="data/video/vb.mp4"></video>
+      <img id="previewImage" src="./data/imge.webp" alt="">
     </section>
     <aside
       class="fixed top-[76px] left-0  w-72 border-l border-white/10 bg-[#111117] p-5 text-white shadow-2xl -translate-x-full"
@@ -37,10 +38,22 @@
         </button>
       </div>
 
-      <ul id="categoriList" class="space-y-2">
-        <li><button class="w-full rounded-lg  px-4 py-3 text-left text-sm font-medium hover:bg-white/10">ALL</button>
+      <ul id="categoriList" class="space-y-2" >
+        <li><button data-category="ALL" class="w-full rounded-lg  px-4 py-3 text-left text-sm font-medium hover:bg-white/10 categoryBnt">ALL Categorys</button>
         </li>
 
+      </ul>
+    </aside>
+    <aside class="fixed top-[76px] right-0  w-72 border-l border-white/10 bg-[#111117] p-5 text-white shadow-2xl  " id="channel">
+      <div class="mb-6 flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Channels</h2>
+        <button type="button" aria-label="Fermer"
+          class="rounded-md px-2 py-1 text-gray-400 hover:bg-white/10 hover:text-white" id="close">
+          ✕
+        </button>
+      </div>
+      <ul id="channelList" class="overflow-y-auto max-h-[600px]">
+        
       </ul>
     </aside>
   </main>
