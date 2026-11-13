@@ -1,16 +1,34 @@
-import { getData } from "../data/data.js";
 export function getCategories() {
-    return getData().then((data) => {
-        const categories = [];
+    const data = JSON.parse(localStorage.getItem('channels'))
 
-        data.forEach((channel) => {
-            if (!categories.includes(channel.category)) {
-                categories.push(channel.category);
-            }
-        });
-        return categories;
+    const categories = [];
+
+    data.forEach((channel) => {
+        if (!categories.includes(channel.category)) {
+            categories.push(channel.category);
+        }
     });
+    return categories;
+
 }
 
 
+
+
+export function getChannelsPerCategory(selectedCategory) {
+    const channels = JSON.parse(localStorage.getItem("channels"))
+    console.log(selectedCategory)
+    if (selectedCategory === 'ALL') {
+        return channels
+    }
+    let filtered  = []
+    for (const channel of channels) {
+        if(channel.category == selectedCategory){
+            filtered.push(channel)
+        }
+    }
+
+    return filtered
+
+}
 
